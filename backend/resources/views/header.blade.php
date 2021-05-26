@@ -17,8 +17,8 @@
               <i className="fa fa-user"></i>
             </button>
             <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a className="dropdown-item" href="#">新規登録</a></li>
-              <li><a className="dropdown-item" href="#">ログイン</a></li>
+              <li><a className="dropdown-item" href="{{ route('register') }}">新規登録</a></li>
+              <li><a className="dropdown-item" href="{{ route('login') }}">ログイン</a></li>
             </ul>
           </div>
         </div>

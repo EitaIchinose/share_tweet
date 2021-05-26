@@ -17,4 +17,6 @@
 
 main {
   height: calc(100vh - 60px - 24px);
+  width: 1000px;
+  margin: 0 auto;
 }
