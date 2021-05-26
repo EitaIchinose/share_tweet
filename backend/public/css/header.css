@@ -1,0 +1,20 @@
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  height: 60px;
+  background-color: #F0FFFF;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: auto 0;
+}
+
+.dropdown {
+  margin: auto 0;
+}
+
+main {
+  height: calc(100vh - 60px - 24px);
+}
