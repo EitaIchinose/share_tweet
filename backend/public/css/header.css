@@ -5,6 +5,18 @@
   background-color: #F0FFFF;
 }
 
+.icon_container {
+  display: flex;
+  margin: auto 0;
+}
+
+.icon_content {
+  margin: auto 0;
+  padding-right: 8px;
+  text-decoration: none;
+  color: blue;
+}
+
 .header-title {
   font-size: 20px;
   font-weight: bold;
