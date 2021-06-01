@@ -1,0 +1,19 @@
+.main_container {
+  margin: 0 auto;
+  border: 1px solid;
+  width: 500px;
+  margin-top: 20px;
+}
+
+.tweet_content {
+  text-align: center;
+}
+
+.img_content {
+  text-align: center;
+}
+
+.user_container {
+  display: flex;
+  justify-content: space-around;
+}
