@@ -23,22 +23,18 @@
       )
     }
 
-    tweetIcon(){
-      return (
-        <a href="#" className="icon_content">投稿<i className="fas fa-edit"></i></a> 
-      )
-    }
-
     guest(){
       return(
-        <div className="dropdown">
-          <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-            <i className="fa fa-user"></i>
-          </button>
-          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a className="dropdown-item" href="{{ route('register') }}">新規登録</a></li>
-            <li><a className="dropdown-item" href="{{ route('login') }}">ログイン</a></li>
-          </ul>
+        <div className="icon_container">
+          <div className="dropdown">
+            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <i className="fa fa-user"></i>
+            </button>
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a className="dropdown-item" href="{{ route('register') }}">新規登録</a></li>
+              <li><a className="dropdown-item" href="{{ route('login') }}">ログイン</a></li>
+            </ul>
+          </div>
         </div>
       )
     }
@@ -53,17 +49,18 @@
           @auth
             <this.headerTitle />
             <div className="icon_container">
-              <this.tweetIcon />
               <div className="dropdown">
                 <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                   <i className="fa fa-user"></i>
                 </button>
                 <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li><a className="dropdown-item" href="#">マイページ</a></li>
-                  <li><a className="dropdown-item" href="#" onClick={this.state.logOut} >ログアウト</a></li>
-                  <form method="POST" action="{{ route('logout') }}" id="logout-form">
-                    <input type="hidden" name="_token" value={ this.state.csrf_token } /> 
-                  </form>
+                  <li>
+                    <a className="dropdown-item" href='#' onClick={this.logOut} >ログアウト</a>
+                    <form method="POST" action="{{ route('logout') }}" id="logout-form">
+                      <input type="hidden" name="_token" value={ this.state.csrf_token } /> 
+                    </form>
+                  </li>
                 </ul>
               </div>
             </div>

@@ -1,4 +1,13 @@
-.main_container {
+.tweet_form {
+  margin: 15px auto 0;
+  width: 750px;
+}
+
+.tweet_btn {
+  text-align: right;
+}
+
+.tweet_container {
   margin: 0 auto;
   border: 1px solid;
   width: 500px;
