@@ -19,20 +19,26 @@
     )
   }
 
+  const Tweet_content = () => {
+    return (
+      <div className="tweet_container">
+        <div className="tweet_content">ツイート内容</div>
+        <div className="img_content">画像</div>
+        <div className="user_container">
+          <div className="good_content">いいね</div>
+          <div className="user_content">by ユーザー名</div>
+        </div>
+      </div>
+    )
+  }
+
   const MAIN = () => {
     return (
       <div className="main_container">
         @auth
         <Tweet />
         @endauth
-        <div className="tweet_container">
-          <div className="tweet_content">ツイート内容</div>
-          <div className="img_content">画像</div>
-          <div className="user_container">
-            <div className="good_content">いいね</div>
-            <div className="user_content">by ユーザー名</div>
-          </div>
-        </div>
+        <Tweet_content />
       </div>
     )
   }
