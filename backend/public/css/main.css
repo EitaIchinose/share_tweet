@@ -3,8 +3,14 @@
   width: 750px;
 }
 
+.error_msg {
+  color: red;
+  margin-left: 120px;
+}
+
 .tweet_btn {
   text-align: right;
+  margin-right: 120px;
 }
 
 .tweet_container {
@@ -25,4 +31,15 @@
 .user_container {
   display: flex;
   justify-content: space-around;
+}
+
+div.mb-3 {
+  display: flex;
+  justify-content: center;
+}
+
+textarea.form-control {
+  width: 498px;
+  resize: none;
+  overflow: hidden;
 }

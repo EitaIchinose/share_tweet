@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TweetController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +23,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 // トップ画面を表示
 Route::get('/', 'App\Http\Controllers\TweetController@index')->name('index');
+
+// 投稿
+Route::post('post', [TweetController::class, 'store'])->name('store');
