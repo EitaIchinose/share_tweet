@@ -54,6 +54,8 @@
 }
 
 .user_icon {
+  display: flex;
+  align-items: center;
   padding-left: 15px;
 }
 

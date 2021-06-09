@@ -37,33 +37,46 @@
     }
   }
 
-  const Tweet_content = () => {
-    return (
-      <React.Fragment>
-        @if(count($tweets) > 0)
-          @foreach($tweets as $tweet)
-            <div className="tweet_container">
-              <div className="tweet_content">{{ $tweet->text}}</div>
-              @if($tweet->image_path != null)
-                <img src="{{ asset('storage/images/'.$tweet->image_path) }}" alt="画像" />
-              @endif
-              <div className="user_container">
-                <div className="good_content">いいね</div>
-                <div className="user_content">
-                  <div className="user_name">by ユーザー名</div>
-                  <div className="user_icon">
-                    <i class="fa fa-cog"></i>
-                    <i class="fas fa-trash-alt"></i>
+  class Tweet_content extends React.Component {
+    constructor(){
+      super();
+      let csrf_token = document.head.querySelector('meta[name="csrf-token"]').content;
+      this.state = {
+          csrf_token: csrf_token
+      }
+    }
+
+    render() {
+      return (
+        <React.Fragment>
+          @if(count($tweets) > 0)
+            @foreach($tweets as $tweet)
+              <div className="tweet_container">
+                <div className="tweet_content">{{ $tweet->text}}</div>
+                @if($tweet->image_path != null)
+                  <img src="{{ asset('storage/images/'.$tweet->image_path) }}" alt="画像" />
+                @endif
+                <div className="user_container">
+                  <div className="good_content">いいね</div>
+                  <div className="user_content">
+                    <div className="user_name">by ユーザー名</div>
+                    <div className="user_icon">
+                      <i className="fa fa-cog"></i>
+                      <form action="post/{{ $tweet->id }}" method="post">
+                        <input type="hidden" name="_token" value={ this.state.csrf_token } />
+                        <button type="submit" className="delete"><i className="fas fa-trash-alt"></i></button>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          @endforeach
-        @else
-          <div>ツイートがありません</div>
-        @endif
-      </React.Fragment>
-    )
+            @endforeach
+          @else
+            <div>ツイートがありません</div>
+          @endif
+        </React.Fragment>
+      )
+    }
   }
 
   const Footer = () => {

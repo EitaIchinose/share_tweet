@@ -56,4 +56,13 @@ class TweetController extends Controller
             return redirect('/');
         }
     }
+
+    /**
+     * 投稿を削除
+     * 
+     */
+    public function destroy($id) {
+        $tweet = Tweet::find($id)->delete();
+        return redirect('/');
+    }
 }

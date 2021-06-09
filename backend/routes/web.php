@@ -26,3 +26,6 @@ Route::get('/', 'App\Http\Controllers\TweetController@index')->name('index');
 
 // 投稿
 Route::post('post', [TweetController::class, 'store'])->name('store');
+
+// 投稿削除
+Route::post('post/{tweet_id}', [TweetController::class, 'destroy'])->name('destroy');
