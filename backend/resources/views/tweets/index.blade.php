@@ -49,7 +49,13 @@
               @endif
               <div className="user_container">
                 <div className="good_content">いいね</div>
-                <div className="user_content">by ユーザー名</div>
+                <div className="user_content">
+                  <div className="user_name">by ユーザー名</div>
+                  <div className="user_icon">
+                    <i class="fa fa-cog"></i>
+                    <i class="fas fa-trash-alt"></i>
+                  </div>
+                </div>
               </div>
             </div>
           @endforeach

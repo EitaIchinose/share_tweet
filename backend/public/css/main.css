@@ -42,7 +42,19 @@
 
 .user_container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.good_content {
+  padding-left: 20px;
+}
+
+.user_content {
+  display: flex;
+}
+
+.user_icon {
+  padding-left: 15px;
 }
 
 div.mb-3 {
