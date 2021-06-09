@@ -59,7 +59,8 @@
                 <div className="user_container">
                   <div className="good_content">いいね</div>
                   <div className="user_content">
-                    <div className="user_name">by ユーザー名</div>
+                    <div className="user_name">by {{ $tweet->user->name }}</div>
+                    @auth
                     <div className="user_icon">
                       <i className="fa fa-cog"></i>
                       <form action="post/{{ $tweet->id }}" method="post">
@@ -67,6 +68,7 @@
                         <button type="submit" className="delete"><i className="fas fa-trash-alt"></i></button>
                       </form>
                     </div>
+                    @endauth
                   </div>
                 </div>
               </div>
