@@ -1,5 +1,8 @@
-#main_root {
+.main_container {
   position: relative;
+  min-height: 100vh;
+  padding-bottom: 34px;
+  box-sizing: border-box;
 }
 
 .tweet_form {
