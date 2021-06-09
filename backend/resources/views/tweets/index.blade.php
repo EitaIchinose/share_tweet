@@ -19,12 +19,14 @@
           <form action="/post" method="post" encType="multipart/form-data" className="create_form">
           <input type="hidden" name="_token" value={ this.state.csrf_token } /> 
           <input type="hidden" name="user_id" value="1" />
-          <input type="hidden" name="image_path" value="テスト" />
           @if($errors->has('text'))
             <div className="error_msg">{{ $errors->first('text') }}</div>
           @endif
             <div className="mb-3">
               <textarea className="form-control" name="text" rows="1"></textarea>
+            </div>
+            <div className="mb-3 img-form">
+              <input className="form-control" type="file" id="formFile" name="image_path" />
             </div>
             <div className="tweet_btn">
               <button type="submit" className="btn btn-primary">ツイートする</button>
@@ -42,7 +44,9 @@
           @foreach($tweets as $tweet)
             <div className="tweet_container">
               <div className="tweet_content">{{ $tweet->text}}</div>
-              <div className="img_content">画像</div>
+              @if($tweet->image_path != null)
+                <img src="{{ asset('storage/images/'.$tweet->image_path) }}" alt="画像" />
+              @endif
               <div className="user_container">
                 <div className="good_content">いいね</div>
                 <div className="user_content">by ユーザー名</div>
@@ -56,6 +60,16 @@
     )
   }
 
+  const Footer = () => {
+    return (
+      <footer className="footer bg-dark">
+        <div className="text-center">
+          <span className="text-light">Copyright &copy; 2021 Eita_eng</span>
+        </div>
+      </footer>
+    )
+  }
+
   const MAIN = () => {
     return (
       <div className="main_container">
@@ -63,6 +77,7 @@
         <Tweet />
         @endauth
         <Tweet_content />
+        <Footer />
       </div>
     )
   }

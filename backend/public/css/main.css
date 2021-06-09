@@ -1,3 +1,7 @@
+#main_root {
+  position: relative;
+}
+
 .tweet_form {
   margin: 15px auto 0;
   width: 750px;
@@ -24,6 +28,11 @@
   text-align: center;
 }
 
+.img-form {
+  width: 498px;
+  margin: 0 auto;
+}
+
 .img_content {
   text-align: center;
 }
@@ -42,4 +51,14 @@ textarea.form-control {
   width: 498px;
   resize: none;
   overflow: hidden;
+}
+
+.main_container {
+  position: relative;
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
